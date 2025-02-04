@@ -26,10 +26,10 @@ function App() {
     
     const data = await response.json()
     console.log(data);
-    const businessInfo = extractBusinessInfo(data.response.message)
+    const businessInfo = extractBusinessInfo(data[0].message)
     console.log(businessInfo);
     //storing bot's message
-    setChat([...newMessage, {role: 'Assistant', content: data.response.message}]);
+    setChat([...newMessage, {role: 'Assistant', content: data[0].message}]);
     
   }
 
